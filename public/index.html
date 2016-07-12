@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<meta charset=utf-8>
+	<title>Space</title>
 	<link rel="stylesheet" type="text/css" href="./css/space.css">
 	<link rel="stylesheet" type="text/css" href="./css/stars.css">
 </head>
 <body>
-	<canvas id="stars"></canvas>
-	<div id="container">
-		<section class="solar">
-		<div class="sun"></div>
+		<main id="container">
+		<section class="solar-system">
+			<div class="sun"></div>
 			<div class="mercury paused"></div>
 			<div class="venus"></div>
 			<div class="earth"></div>
 			<div class="mars"></div>
 			<div class="asteroids-belt"></div>
-			<div class="jupiter">
 			<div class="jupiter">
 				<div class="satellite satellite-1">
 					<div class="europa"></div>					
@@ -29,8 +28,11 @@
 			<div class="neptune"></div>
 			<div class="pluto"></div>
 		</section>
-	</div>
-<script type="text/javascript" src="./js/space.js"></script>
-<script type="text/javascript" src="./js/stars.js"></script>
+	</main>
+	<div class="stars"></div>
+<div class="twinkling"></div>
+	<script src="https://d3js.org/d3.v4.js"></script>
+	<script type="text/javascript" src="./js/space.js"></script>
+	<script type="text/javascript" src="./js/stars.js"></script>
 </body>
 </html>

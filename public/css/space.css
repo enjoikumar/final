@@ -1,0 +1,21 @@
+#container {
+  background: radial-gradient(ellipse at bottom, #1c2837 0%, #050608 100%);
+  width: 100%;
+  height: 100%;
+}
+#container:after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 2px;
+  top: -2px;
+  background: white;
+  border-radius: 100px;
+}
+#container .solar-system {
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transform: scale(0.95);
+}
