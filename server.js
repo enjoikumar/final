@@ -17,9 +17,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-//Importing Controllers 
-// var imgur = require('./controllers/imgur_controller.js');
-// app.use('/coolpicapp', imgur);
 
 //Server execution
 var port = process.env.PORT || 3000;
