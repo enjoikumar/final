@@ -66,7 +66,7 @@
   cursor: pointer;
 }
 
-#contaner .solar-system .satellite {
+#container .solar-system .satellite {
   margin:0;
   position: absolute;
   border-radius: 100%;
@@ -88,7 +88,32 @@
   z-index:13;
 }
 
+#container .solar-system .mercury {
+  height: 70px;
+  width: 70px;
+  margin-top: -35px;
+  margin-left: -35px;
+  animation: orb 7.18673s linear infinite;
+  z-index: 12;
+}
 
+#container .solar-system .mercury:before {
+  height: 4px;
+  width: 4px;
+  background-color: #9f5e26;
+  background: linear-gradient(to bottom, #f2970e 0%, #fc5a0f 100%);
+  margin-top: -2px;
+  margin-left: -2px;
+}
+
+#container .solar-system .venus {
+  height: 100px;
+  width: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+  animation: orb-anti-clock 18.45553s linear infinite;
+  z-index: 11;
+}
 
 
 
