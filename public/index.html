@@ -5,13 +5,14 @@
 	<title>Space</title>
 	<link rel="stylesheet" type="text/css" href="./css/space.css">
 	<link rel="stylesheet" type="text/css" href="./css/stars.css">
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 </head>
 <body>
-<canvas id="canvas"></canvas>
+<!-- <canvas id="canvas"></canvas>
 		<main id="container">
 		<section class="solar-system">
 			<div class="sun"></div>
-			<div class="mercury paused"></div>
+			<div class="mercury"></div> 
 			<div class="venus"></div>
 			<div class="earth"></div>
 			<div class="mars"></div>
@@ -31,7 +32,22 @@
 		</section>
 	</main>
 	<div class="stars"></div>
-<div class="twinkling"></div>
+<div class="twinkling"></div> -->
+<section class="clearfix">
+	<ul class="solarsystem">
+	  <li class="sun">Sun</li>
+	  <li class="mercury"><span>Mercury</span></a></li>
+	  <li class="venus"><span>Venus</span></a></li>
+	  <li class="earth"><span>Earth<span class="moon"> Moon</span></span></a></li>
+	  <li class="mars"><span>Mars</span></a></li>
+	  <li class="asteroids_meteorids"><span>Asteroids  Meteorids</span></li>
+	  <li class="jupiter"><span>Jupiter</span></a></li>
+	  <li class="saturn"><span>Saturn  <span class="ring">Ring</span></span></a></li>
+	  <li class="uranus"><span>Uranus</span></a></li>
+	  <li class="neptune"><span>Neptune</span></a></li>
+	  <li class="pluto"><span>Pluto</span></a></li>
+	</ul>
+</section>
 	<script src="https://d3js.org/d3.v4.js"></script>
 	<script type="text/javascript" src="./js/space.js"></script>
 	<script type="text/javascript" src="./js/stars.js"></script>
