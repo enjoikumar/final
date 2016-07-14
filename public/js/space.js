@@ -13,6 +13,11 @@ $( document ).ready(function() {
 // $('head').append('<style>.uranus{-webkit-animation-duration:70s;}</style>');
 // $('head').append('<style>.neptune{-webkit-animation-duration:100s;}</style>');
 // $('head').append('<style>.pluto{-webkit-animation-duration:120s;}</style>');
+$('head').append('<style>ul#descriptionsh2:hover{color:red}</style>');
+$('head').append('<style>ul#descriptionsh2:hover{-webkit-transform:scale(1.08)-o-transform:scale(1.08);transform:scale(1.08);}</style>');
+$('head').append('<style>ul#descriptionsh2:hover{-o-transform:scale(1.08);transform:scale(1.08);}</style>');
+$('head').append('<style>ul#descriptionsh2:hover{transform:scale(1.08);}</style>');
+
 
 
 

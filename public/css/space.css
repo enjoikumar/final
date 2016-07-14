@@ -1,3 +1,8 @@
+body{
+  font-family: 'Dosis', sans-serif;
+}
+
+
 /*orbit color*/
 ul.solarsystem li {
   text-indent: -9999px;
@@ -253,13 +258,13 @@ ul.solarsystem li {
   -moz-animation-duration:8s;
 }
 .earth {
-  -webkit-animation-duration:12s; 
-  -moz-animation-duration:12s;
+  -webkit-animation-duration:13s; 
+  -moz-animation-duration:13s;
 }
 
 .earth span {
-  -webkit-animation-duration:2s; 
-  -moz-animation-duration:2s;
+  -webkit-animation-duration:4s; 
+  -moz-animation-duration:4s;
 }
 
 .mars {
@@ -286,4 +291,58 @@ ul.solarsystem li {
   -webkit-animation-duration:120s;
   -moz-animation-duration:120s;
 }
+
+
+/*Descriptions*/
+ul#descriptions {
+  position: absolute;
+  top: 150px;
+  right: 100px;
+  list-style: none;
+}
+
+ul#descriptions h2 {
+  cursor: pointer;
+  color: #2196F3;
+  -webkit-transition: all 0.15s ease-in;
+  -o-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
+  font-size: 20px;
+  position: relative;
+  z-index: 100;
+  -webkit-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  margin-bottom: -15px;
+}
+
+/*hover box*/
+ul#descriptions li p {
+  position: absolute;
+  left: -250px;
+  top: 0;
+  width: 200px;
+  display: inline;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 13px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  background: #90CAF9;
+  padding: 30px;
+  color: white;
+  line-height: 1.7;
+  z-index: 100;
+  border: 1px solid #1c203c;
+}
+
+ul#descriptions h2:hover+p {
+  visibility: visible;
+  opacity: 0.9;
+  left: -280px;
+}
+
 
