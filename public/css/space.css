@@ -189,18 +189,20 @@ ul.solarsystem li.neptune span {
 ul.solarsystem li.pluto {
   width: 580px;
   height: 580px;
+  -webkit-border-radius: 292px;
+  -moz-border-radius: 292px;
   border-radius: 292px;
-  bottom: -50px;  
-  right: 320px;
+  top: 30px;
+  left: 230px;
   z-index: 91;
 }
 
-/*pluto planet*/
 ul.solarsystem li.pluto span {
   background: #3e0f07;
   top: 79px;
   left: 79px;
 }
+
 
 /*animation suff*/
 ul.solarsystem li {
@@ -229,32 +231,59 @@ ul.solarsystem li {
 }
 
 
-ul.solarsystem li {
-    -webkit-animation-iteration-count:infinite;
-    -webkit-animation-timing-function:linear;
-    -webkit-animation-name:orbit;
-    
-    -moz-animation-iteration-count:infinite;
-    -moz-animation-timing-function:linear;
-    -moz-animation-name:orbit;
+.solarsystem {
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-timing-function:linear;
+  -webkit-animation-name:orbit;
 }
-ul.solarsystem li.earth span {
-    -webkit-animation-iteration-count:infinite;
-    -webkit-animation-timing-function:linear;
-    -webkit-animation-name:moon;
-    
-    -moz-animation-iteration-count:infinite;
-    -moz-animation-timing-function:linear;
-    -moz-animation-name:moon;
+
+.earth span {
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-timing-function:linear;
+  -webkit-animation-name:moon;
 }
-ul.solarsystem li.mercury {-webkit-animation-duration:5s; -moz-animation-duration:5s;}
-ul.solarsystem li.venus {-webkit-animation-duration:8s; -moz-animation-duration:8s;}
-ul.solarsystem li.earth {-webkit-animation-duration:12s; -moz-animation-duration:12s;}
-ul.solarsystem li.earth span {-webkit-animation-duration:2s; -moz-animation-duration:2s;}
-ul.solarsystem li.mars {-webkit-animation-duration:20s; -moz-animation-duration:20s;}
-ul.solarsystem li.jupiter {-webkit-animation-duration:30s; -moz-animation-duration:30s;}
-ul.solarsystem li.saturn {-webkit-animation-duration:60s; -moz-animation-duration:60s;}
-ul.solarsystem li.uranus {-webkit-animation-duration:70s; -moz-animation-duration:70s;}
-ul.solarsystem li.neptune {-webkit-animation-duration:100s; -moz-animation-duration:100s;}
-ul.solarsystem li.pluto {-webkit-animation-duration:120s; -moz-animation-duration:120s;}
+
+
+.mercury {
+  -webkit-animation-duration:5s; 
+  -moz-animation-duration:5s;
+}
+.venus {
+  -webkit-animation-duration:8s; 
+  -moz-animation-duration:8s;
+}
+.earth {
+  -webkit-animation-duration:12s; 
+  -moz-animation-duration:12s;
+}
+
+.earth span {
+  -webkit-animation-duration:2s; 
+  -moz-animation-duration:2s;
+}
+
+.mars {
+  -webkit-animation-duration:20s; 
+  -moz-animation-duration:20s;
+}
+.jupiter {
+  -webkit-animation-duration:30s; 
+  -moz-animation-duration:30s;
+}
+.saturn {
+  -webkit-animation-duration:60s; 
+  -moz-animation-duration:60s;
+}
+.uranus {
+  -webkit-animation-duration:70s; 
+  -moz-animation-duration:70s;
+}
+.neptune {
+  -webkit-animation-duration:100s; 
+  -moz-animation-duration:100s;
+}
+.pluto {
+  -webkit-animation-duration:120s;
+  -moz-animation-duration:120s;
+}
 
