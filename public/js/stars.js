@@ -94,6 +94,9 @@ function upd(rot) {
 }
 
 //creating the stars
+//puts them all in the array and then 
+//riterating them over the x and y
+//filling the bacground
 function draw() {
   for (var i in arr) {
     stars = arr[i];
@@ -107,3 +110,20 @@ function draw() {
 function rnd(min, max) {
   return Math.random() * (max - min) + min;
 }
+
+//sets the numbers of stars
+//randomizes the positon from above
+//each dot has its own space
+//add too many and even though it moves it doesnt look like it moves
+function go() {
+  for (var i = 0; i < 5000; i++) {
+    var dimension = new Part(
+      rnd(-w, h),
+      rnd(-w, h),
+      rnd(-sprinkle, sprinkle)
+    );
+    arr.push(dimension);
+  }
+}
+
+go();
