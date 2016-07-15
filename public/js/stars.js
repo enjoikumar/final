@@ -126,4 +126,33 @@ function go() {
   }
 }
 
+//makes the mouse responsive to movement
+window.addEventListener('mousemove', function(e) {
+  mouse.x = (e.clientY - rat.y) / w;
+  mouse.y = (e.clientX - rat.x) / h;
+  rat.x = e.clientX;
+  rat.y = e.clientY;
+}, false);
+
+
+//creating the background color
+function run() {
+  $.clearRect(0, 0, w, h);
+  //setting it to the width
+  var background = $.createLinearGradient(canvas.width,
+    canvas.height * 2,
+    canvas.width + canvas.width, 2);
+    background.addColorStop(1, 'rgb(8, 1, 25)');
+    //fill the background
+  $.fillStyle = background;
+  $.fillRect(0, 0, w, h);
+  //calling upon functions above
+  upd();
+  draw();
+  //making sure the animation runs
+  window.requestAnimationFrame(run);
+}
+
+// invoking the functions
 go();
+run();

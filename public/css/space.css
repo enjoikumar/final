@@ -331,9 +331,9 @@ ul#descriptions li p {
   -webkit-transition: all 0.3s ease-in;
   -o-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
-  background: #90CAF9;
+  background: white;
   padding: 30px;
-  color: white;
+  color: #1c203c;
   line-height: 1.7;
   z-index: 100;
   border: 1px solid #1c203c;
@@ -341,7 +341,7 @@ ul#descriptions li p {
 
 ul#descriptions h2:hover+p {
   visibility: visible;
-  opacity: 0.9;
+  opacity: 0.6;
   left: -280px;
 }
 
