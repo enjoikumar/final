@@ -7,7 +7,7 @@ var h = canvas.height = window.innerHeight;
 
 var arr = [];
 var u = 0;
-var dep = w;
+var sprinkle = w;
 var dp = 0.70;
 
 //mouse locations
@@ -22,7 +22,7 @@ var mouse = {
 
 //points of depth and perception
 function Obj(x, y, z) {
-  this.set(x, y, z);
+  this.set(x, y, z);  
 }
 //setting a value so it always starts at 0 a
 //and each object inheriting the value
@@ -93,3 +93,17 @@ function upd(rot) {
   }
 }
 
+//creating the stars
+function draw() {
+  for (var i in arr) {
+    stars = arr[i];
+    depth = ((stars.rp.z / sprinkle) + 1);
+    $.fillStyle = stars.color;
+    $.fillRect(w + stars.rp.x, h + stars.rp.y, rnd(depth/0.8, depth/2),  depth/0.9);
+  }
+}
+
+//randomizes the position of the stars and puts them everywhere
+function rnd(min, max) {
+  return Math.random() * (max - min) + min;
+}
