@@ -52,3 +52,12 @@ Obj.prototype = {
   }
 };
 
+//creating the stars and making them move
+function Part(x, y, z) {
+  this.op = new Obj(x, y, z);
+  this.rp = new Obj(x, y, z);
+  this.rot = new Obj();
+  this.vel = new Obj();
+  this.color = 'hsla(216,95%,85%,'+rnd(0.5, 1)+')';
+}
+
