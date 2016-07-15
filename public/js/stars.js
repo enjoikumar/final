@@ -24,7 +24,8 @@ var mouse = {
 function Obj(x, y, z) {
   this.set(x, y, z);
 }
-//setting a value so it always starts at 0
+//setting a value so it always starts at 0 a
+//and each object inheriting the value
 Obj.prototype = {
   set: function(x, y, z) {
     this.x = x || 0;
@@ -59,5 +60,36 @@ function Part(x, y, z) {
   this.rot = new Obj();
   this.vel = new Obj();
   this.color = 'hsla(216,95%,85%,'+rnd(0.5, 1)+')';
+}
+
+//the mouse will change, so the background needs to be responsive
+//this makes sure it stays in place
+function upd(rot) {
+  for (var i in arr) {
+    op = arr[i].op;
+    rp = arr[i].rp;
+    rot = arr[i].rot;
+    //vel represents velocity
+    vel = arr[i].vel;
+    color = arr[i].color;
+    vel.x += mouse.x * 0.15;
+    vel.y += mouse.y * 0.15;
+    rp.set(op.x, op.y, op.z);
+
+    //rotation is set to the velocity
+    rot.x += vel.x;
+    rot.y += vel.y;
+    rot.z += vel.z;
+
+    rp.rotY(rot.y);
+    rp.rotX(rot.x);
+    //so mouse movements arent too fast;
+    //set to zero becaause it matches the xyz values
+    vel.set(
+      vel.x * dp,
+      vel.y * dp,
+      0
+    );
+  }
 }
 
