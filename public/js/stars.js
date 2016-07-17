@@ -59,7 +59,8 @@ function Part(x, y, z) {
   this.rp = new Obj(x, y, z);
   this.rot = new Obj();
   this.vel = new Obj();
-  this.color = 'hsla(216,95%,85%,'+rnd(0.5, 1)+')';
+  //changing the color and size, has to be hsla
+  this.color = 'hsla(216,95%,85%,'+rnd(2, 2)+')';
 }
 
 //the mouse will change, so the background needs to be responsive
@@ -133,7 +134,7 @@ window.addEventListener('mousemove', function(e) {
   rat.x = e.clientX;
   rat.y = e.clientY;
 }, false);
-
+9
 
 //creating the background color
 function run() {
