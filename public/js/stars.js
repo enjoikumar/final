@@ -1,7 +1,7 @@
  
 var canvas = document.getElementById("canv");
-//$ has to be 2d
-var $ = canvas.getContext("2d");
+//get has to be 2d
+var get = canvas.getContext("2d");
 
 //making sure background fills the entire page
 var w = canvas.width = window.innerWidth;
@@ -109,8 +109,8 @@ function create() {
   for (var i in arr) {
     stars = arr[i];
     depth = ((stars.rp.z / sprinkle) + 1);
-    $.fillStyle = stars.color;
-    $.fillRect(w + stars.rp.x, h + stars.rp.y, random(depth/1, depth/2),  depth/1);
+    get.fillStyle = stars.color;
+    get.fillRect(w + stars.rp.x, h + stars.rp.y, random(depth/1, depth/2),  depth/1);
   }
 }
 
@@ -146,17 +146,17 @@ window.addEventListener('mousemove', function(e) {
 
 //creating the background color
 function moving() {
-  $.clearRect(0, 0, w, h);
+  get.clearRect(0, 0, w, h);
   //setting it to the width/height
   var background = 
-    $.createLinearGradient(canvas.width,
+    get.createLinearGradient(canvas.width,
     canvas.height * 2,
     canvas.width + canvas.width, 2);
     //setting the color, has to be hsla or rgb
     background.addColorStop(1, 'rgb(8, 1, 25)');
     //fill the background
-    $.fillStyle = background;
-    $.fillRect(0, 0, w, h);
+    get.fillStyle = background;
+    get.fillRect(0, 0, w, h);
     //calling upon functions above
     upd();
     create();
