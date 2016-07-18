@@ -105,7 +105,7 @@ function upd(rot) {
 //puts them all in the array and then 
 //riterating them over the x and y
 //filling the bacground
-function draw() {
+function create() {
   for (var i in arr) {
     stars = arr[i];
     depth = ((stars.rp.z / sprinkle) + 1);
@@ -123,7 +123,7 @@ function random(min, max) {
 //randomizes the positon from above
 //each dot has its own space
 //add too many and even though it moves it doesnt look like it moves
-function go() {
+function everything() {
   for (var i = 0; i < 5000; i++) {
     var dimension = new Part(
       random(-w, h),
@@ -145,7 +145,7 @@ window.addEventListener('mousemove', function(e) {
 
 
 //creating the background color
-function run() {
+function moving() {
   $.clearRect(0, 0, w, h);
   //setting it to the width/height
   var background = 
@@ -159,11 +159,11 @@ function run() {
     $.fillRect(0, 0, w, h);
     //calling upon functions above
     upd();
-    draw();
+    create();
     //making sure the animation runs
-    window.requestAnimationFrame(run);
+    window.requestAnimationFrame(moving);
 }
 
 // invoking the functions
-go();
-run();
+everything();
+moving();
