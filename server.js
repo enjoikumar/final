@@ -17,6 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
+var mongoUri = process.env.MONGOLAB_URI || 'mongodb://localhost/space_map';
 
 //Server execution
 var port = process.env.PORT || 3000;
