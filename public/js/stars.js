@@ -1,12 +1,13 @@
  
 var canvas = document.getElementById("canv");
+//$ has to be 2d
 var $ = canvas.getContext("2d");
 
+//making sure background fills the entire page
 var w = canvas.width = window.innerWidth;
 var h = canvas.height = window.innerHeight;
 
 var arr = [];
-var u = 0;
 var sprinkle = w;
 var dp = 0.70;
 
@@ -15,6 +16,7 @@ var rat = {
   x: 0,
   y: 0
 };
+
 var mouse = {
   x: 0,
   y: 0
@@ -24,6 +26,7 @@ var mouse = {
 function Obj(x, y, z) {
   this.set(x, y, z);  
 }
+
 //setting a value so it always starts at 0 a
 //and each object inheriting the value
 Obj.prototype = {
@@ -55,12 +58,13 @@ Obj.prototype = {
 
 //creating the stars and making them move
 function Part(x, y, z) {
+  //giving the variables perspectives
   this.op = new Obj(x, y, z);
   this.rp = new Obj(x, y, z);
   this.rot = new Obj();
   this.vel = new Obj();
   //changing the color and size, has to be hsla
-  this.color = 'hsla(216,95%,85%,'+rnd(2, 2)+')';
+  this.color = 'hsla(216,95%,85%,'+random(2, 2)+')';
 }
 
 //the mouse will change, so the background needs to be responsive
@@ -72,9 +76,12 @@ function upd(rot) {
     rot = arr[i].rot;
     //vel represents velocity
     vel = arr[i].vel;
+    //color to color
     color = arr[i].color;
-    vel.x += mouse.x * 0.15;
-    vel.y += mouse.y * 0.15;
+    //vel would make equal the mouse and increase the speed
+    // set it to .10 to make sure its not too fast
+    vel.x += mouse.x * .10;
+    vel.y += mouse.y * .10;
     rp.set(op.x, op.y, op.z);
 
     //rotation is set to the velocity
@@ -103,12 +110,12 @@ function draw() {
     stars = arr[i];
     depth = ((stars.rp.z / sprinkle) + 1);
     $.fillStyle = stars.color;
-    $.fillRect(w + stars.rp.x, h + stars.rp.y, rnd(depth/0.8, depth/2),  depth/0.9);
+    $.fillRect(w + stars.rp.x, h + stars.rp.y, random(depth/1, depth/2),  depth/1);
   }
 }
 
 //randomizes the position of the stars and puts them everywhere
-function rnd(min, max) {
+function random(min, max) {
   return Math.random() * (max - min) + min;
 }
 
@@ -119,9 +126,9 @@ function rnd(min, max) {
 function go() {
   for (var i = 0; i < 5000; i++) {
     var dimension = new Part(
-      rnd(-w, h),
-      rnd(-w, h),
-      rnd(-sprinkle, sprinkle)
+      random(-w, h),
+      random(-w, h),
+      random(-sprinkle, sprinkle)
     );
     arr.push(dimension);
   }
@@ -129,29 +136,32 @@ function go() {
 
 //makes the mouse responsive to movement
 window.addEventListener('mousemove', function(e) {
+  //client is user, it has to be client
   mouse.x = (e.clientY - rat.y) / w;
   mouse.y = (e.clientX - rat.x) / h;
   rat.x = e.clientX;
   rat.y = e.clientY;
 }, false);
-9
+
 
 //creating the background color
 function run() {
   $.clearRect(0, 0, w, h);
-  //setting it to the width
-  var background = $.createLinearGradient(canvas.width,
+  //setting it to the width/height
+  var background = 
+    $.createLinearGradient(canvas.width,
     canvas.height * 2,
     canvas.width + canvas.width, 2);
+    //setting the color, has to be hsla or rgb
     background.addColorStop(1, 'rgb(8, 1, 25)');
     //fill the background
-  $.fillStyle = background;
-  $.fillRect(0, 0, w, h);
-  //calling upon functions above
-  upd();
-  draw();
-  //making sure the animation runs
-  window.requestAnimationFrame(run);
+    $.fillStyle = background;
+    $.fillRect(0, 0, w, h);
+    //calling upon functions above
+    upd();
+    draw();
+    //making sure the animation runs
+    window.requestAnimationFrame(run);
 }
 
 // invoking the functions
